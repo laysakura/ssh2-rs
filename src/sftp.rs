@@ -593,7 +593,7 @@ impl File {
     pub fn readdir(&mut self) -> Result<(PathBuf, FileStat), Error> {
         let locked = self.lock()?;
 
-        let mut buf = Vec::<u8>::with_capacity(128);
+        let mut buf = Vec::<u8>::with_capacity(1280);
         let mut stat = unsafe { mem::zeroed() };
         let mut rc;
         loop {
